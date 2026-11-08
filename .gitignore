@@ -46,6 +46,7 @@ linkedin_Profile.pdf
 # OS files
 .DS_Store
 Thumbs.db
+*.bak
 
 # Editor
 .vscode/

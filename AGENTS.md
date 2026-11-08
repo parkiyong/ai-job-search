@@ -1,5 +1,5 @@
 ---
-framework_version: 1.0.0
+framework_version: 1.0.1
 ---
 
 # Agent Guidelines: AI Job Search
@@ -17,3 +17,5 @@ To prevent duplication and configuration drift across different AI agent framewo
    - Do not duplicate these rules or specifications. Treat `.claude/` files as the single source of truth.
 3. **Portal Search Skills:**
    - Job-portal search CLIs live under [.agents/skills/](.agents/skills/) in the portable Agent Skills format (with a `SKILL.md` per portal). Codex and Antigravity discover these automatically; the `/scrape` workflow in [.claude/skills/job-scraper/](.claude/skills/job-scraper/) orchestrates them.
+4. **Antigravity Skills:**
+   - [.agents/skills/](.agents/skills/) holds thin adapters so every slash command (`/setup`, `/scrape`, `/rank`, `/apply`, `/interview`, `/upskill`, ...) works in Antigravity. Each one points at its canonical spec under `.claude/` and maps Claude-specific tools (subagents, AskUserQuestion) to Antigravity equivalents. Environment: bun lives at `~/.bun/bin/bun`; TinyTeX (if installed) at `~/.local/bin`.
